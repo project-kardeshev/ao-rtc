@@ -1,0 +1,19 @@
+{
+  "name": "ao-rtc",
+  "version": "1.0.0",
+  "description": "WebRTC with ao signalling and connection coordination",
+  "main": "index.js",
+  "repository": "https://github.com/project-kardeshev/ao-rtc.git",
+  "author": "atticusofsparta",
+  "license": "MIT",
+  "dependencies": {
+    "@permaweb/aoconnect": "^0.0.51",
+    "@types/webrtc": "^0.0.42",
+    "arbundles": "^0.11.0",
+    "arconnect": "^1.0.3",
+    "arweave": "^1.15.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}
