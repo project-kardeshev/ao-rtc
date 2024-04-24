@@ -1,4 +1,3 @@
-
 /**
  * Interface for managing WebRTC connections
  */
@@ -10,8 +9,6 @@ export interface WebRTCManager {
     onAnswer: (callback: (answer: RTCSessionDescriptionInit) => void) => void;
     onIceCandidate: (callback: (candidate: RTCIceCandidate) => void) => void;
 }
-
-
 /**
  * Interface for connecting to peer, implements a network topology
  */
@@ -23,7 +20,6 @@ export interface RTCServer {
     onLogin: (callback: (username: string) => void) => void;
     onLogout: (callback: () => void) => void;
 }
-
 export interface AoRTCSignalingContract {
     register: (username: string, publicKey: string) => void;
 }

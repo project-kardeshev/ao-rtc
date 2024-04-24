@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module">
+      import {
+        decryptJSONWithArconnect,
+        encryptJSONWithPublicKey,
+      } from '../bundles/web.bundle.min.js';
+
+      async function connect() {
+        await window.arweaveWallet.connect([
+          'DECRYPT',
+          'ENCRYPT',
+          'ACCESS_PUBLIC_KEY',
+        ]);
+      }
+      async function testPubEncryptDecrypt() {
+        const pk = await window.arweaveWallet.getActivePublicKey();
+        const data = {
+          test: 'test',
+        };
+        const encrypted = await encryptJSONWithPublicKey(data, pk);
+        console.log(encrypted);
+        const decrypted = await decryptJSONWithArconnect(
+          encrypted,
+          window.arweaveWallet,
+        );
+        console.log(decrypted);
+      }
+      await connect();
+      window.testEncrypt = testPubEncryptDecrypt;
+    </script>
+  </head>
+  <body>
+    <button onclick="connect">Connect</button>
+    <button onclick="testEncrypt()">Test Encrypt/Decrypt</button>
+  </body>
+</html>

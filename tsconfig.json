@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["esnext", "dom"],
+    "outDir": "./lib/esm",
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
+    "alwaysStrict": true,
+    "types": ["node", "jest"],
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationDir": "./lib/types",
+    /* Additional Checks */
+    "pretty": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true
+  },
+  "include": ["src"],
+  "exclude": ["lib", "node_modules", "bundles", "tests"]
+}
